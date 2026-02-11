@@ -1,7 +1,16 @@
 ---
+---
 title: Welcome to Quartz 4
 ---
-New，
-Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers publish personal notes, wikis, and [digital gardens](https://jzhao.xyz/posts/networked-thought) to the web.
 
-See the [official documentation](https://quartz.jzhao.xyz/) for more details.
+欢迎来到我的数字花园！
+
+## 笔记导航
+
+- [[CycleGan官方源码解析]]
+- [[基于Gradio的CycleGan源码]]
+- [[医疗rag+lora源码]]
+- [[Temperature VS Top_p]]
+- [[ast]]
+
+---
