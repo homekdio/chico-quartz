@@ -1,6 +1,6 @@
 ---
 ---
-title: Welcome to Quartz 4
+Welcome to Quartz 4
 ---
 
 欢迎来到我的数字花园！
