@@ -20,6 +20,7 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
     permissions:
+      contents: read # 允许 checkout private 仓库
       issues: write # required for peter-evans/create-issue-from-file
     steps:
       - name: Checkout
