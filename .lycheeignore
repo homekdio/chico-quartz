@@ -1,0 +1,2 @@
+# 忽略 private 仓库的链接检查
+https://github.com/homekdio/chico-quartz/.*
