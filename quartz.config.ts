@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: "sosiristseng.github.io/template-quartz",
+    baseUrl: "homekdio.github.io/chico-quartz",
     ignorePatterns: ["private", "_templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
