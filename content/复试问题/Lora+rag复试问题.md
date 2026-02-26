@@ -6,8 +6,6 @@ tags:
   - LoRA
 ---
 
-# LoRA + RAG 复试问题
-
 代码地址：[[医疗rag+lora源码]]
 
 ---

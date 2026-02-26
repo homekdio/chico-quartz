@@ -5,8 +5,6 @@ tags:
   - CycleGAN
 ---
 
-# CycleGAN 复试问题
-
 代码地址：[[基于Gradio的CycleGan源码]]
 
 ---

@@ -5,8 +5,6 @@ tags:
   - CycleGAN
 ---
 
-# CycleGAN 官方源码文件结构详解
-
 这份文档将帮助你理解 `pytorch-CycleGAN-and-pix2pix` 这个官方项目的目录结构。在阅读源码或回答面试问题时，这个结构图非常关键。
 
 ## 根目录文件

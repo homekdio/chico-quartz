@@ -4,7 +4,6 @@ tags:
   - CV
   - YOLOv7
 ---
-# YOLOv7 网络结构讲解
+
 ![[yolov7网络结构图.jpg]]
 啊
-

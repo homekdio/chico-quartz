@@ -4,8 +4,6 @@ tags:
   - Python
 ---
 
-# ast 模块
-
 ## 简介
 
 ```python

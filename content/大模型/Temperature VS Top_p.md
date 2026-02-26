@@ -4,8 +4,6 @@ tags:
   - 大模型
 ---
 
-# Temperature VS Top_p
-
 **Temperature** : 温度，温度越高会把原始 **logits** 归一化到更平均，概率更平均。温度越低会把强的变强，弱的变弱。
 
 |  词  | 原始概率（或者temperature=1） | 调整后概率（temperature=0.5） | 调整后概率（temperature=2） |
