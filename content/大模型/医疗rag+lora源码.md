@@ -1,6 +1,12 @@
-# RAG 代码逐行超详细讲解 (零基础小白版)
+---
+title: RAG 代码逐行超详细讲解
+tags:
+  - 大模型
+  - RAG
+  - LoRA
+---
 
-这份文档专门为您准备，将 [rag_lora_cloud_improverd.ipynb](file:///d:/Program%20Files/develop/llm_related-main/rag_demo/rag_lora_cloud_improverd.ipynb) 笔记本中的代码拆解开来，用最通俗易懂的语言解释它的**作用**、**意义**以及**为什么要这么写**。
+# RAG 代码逐行超详细讲解
 
 ---
 
@@ -74,8 +80,9 @@ os.environ["DASHSCOPE_API_KEY"] = config.api_key
 ## 第三部分：加载检索器 (Loading Retrievers)
 
 这一步是把我们的“知识库”加载进内存。知识库分两路：
-1.  **BM25 (关键词)**：硬搜索，比如搜“骨折”必须要有这两个字。
-2.  **Chroma (语义)**：软搜索，搜“骨折”它能懂“腿断了”也是相关的。
+
+1. **BM25 (关键词)**：硬搜索，比如搜“骨折”必须要有这两个字。
+2. **Chroma (语义)**：软搜索，搜“骨折”它能懂“腿断了”也是相关的。
 
 ```python
 def preprocessing_func(text):
@@ -197,21 +204,27 @@ def load_model(config: Config):
 为了做对比实验，我们将功能拆开。
 
 ### 1. 找资料 (`get_relevant_context`)
+
 它的任务是去两个检索器里找资料，然后用 RRF 排序，最后清洗数据（因为有时候找出来的是 JSON 格式的乱码，要提取出纯文本）。
 
 ### 2. 写提示 (`build_prompt`)
+
 这是我们在教 AI 怎么回答。
-*   **有资料时 (RAG)**：我们给它一个模板：“你是专家...参考资料是...请分点回答...问题是...”。
-*   **没资料时 (Direct)**：直接问：“你是专家...问题是...”。
+
+* **有资料时 (RAG)**：我们给它一个模板：“你是专家...参考资料是...请分点回答...问题是...”。
+* **没资料时 (Direct)**：直接问：“你是专家...问题是...”。
 
 ### 3. 生成回答
-*   **`generate_local`**：用显卡里的模型。流程是：文字 -> 转数字 (`input_ids`) -> 模型计算 -> 出数字结果 (`generated_ids`) -> 转回文字 (`decode`)。
-*   **`generate_api`**：直接发 HTTP 请求给阿里云，等它回话。
+
+* **`generate_local`**：用显卡里的模型。流程是：文字 -> 转数字 (`input_ids`) -> 模型计算 -> 出数字结果 (`generated_ids`) -> 转回文字 (`decode`)。
+* **`generate_api`**：直接发 HTTP 请求给阿里云，等它回话。
 
 ### 4. 实验总管 (`run_experiment`)
+
 这是个“调度员”。
-*   如果你选 `mode="local_rag"`：它就先调**找资料**函数，再调**写提示**函数，最后调**本地生成**函数。
-*   如果你选 `mode="api_direct"`：它就跳过找资料，直接调**写提示**函数，然后调**API生成**函数。
+
+* 如果你选 `mode="local_rag"`：它就先调**找资料**函数，再调**写提示**函数，最后调**本地生成**函数。
+* 如果你选 `mode="api_direct"`：它就跳过找资料，直接调**写提示**函数，然后调**API生成**函数。
 
 ---
 
