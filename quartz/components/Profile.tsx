@@ -25,7 +25,7 @@ const defaultOptions: ProfileOptions = {
 export default ((userOpts?: Partial<ProfileOptions>) => {
   const opts = { ...defaultOptions, ...userOpts }
 
-  const Profile: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
+  const Profile: QuartzComponent = ({ displayClass, fileData }: QuartzComponentProps) => {
     const avatarPath = opts.avatar.startsWith("/")
       ? resolveRelative(fileData.slug!, opts.avatar.slice(1) as FullSlug)
       : opts.avatar
