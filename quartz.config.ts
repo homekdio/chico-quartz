@@ -1,4 +1,6 @@
+// @ts-ignore
 import { QuartzConfig } from "./quartz/cfg"
+// @ts-ignore
 import * as Plugin from "./quartz/plugins"
 
 /**

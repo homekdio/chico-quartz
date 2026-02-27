@@ -1,4 +1,6 @@
+// @ts-ignore
 import { PageLayout, SharedLayout } from "./quartz/cfg"
+// @ts-ignore
 import * as Component from "./quartz/components"
 
 // components shared across all pages
