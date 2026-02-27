@@ -56,7 +56,7 @@ const config: QuartzConfig = {
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
         priority: ["git", "frontmatter", "filesystem"],
-      }),
+      }),//最近笔记排序的判断条件
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",
