@@ -38,7 +38,6 @@ export const defaultHomePageLayout: PageLayout = {
   ],
   right: [
     Component.RecentNotes({ title: "最近笔记", limit: 5, showTags: false }),
-    Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
 }
@@ -68,9 +67,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.RecentNotes({ title: "最近笔记", limit: 5, showTags: false }),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
   ],
 }
 
