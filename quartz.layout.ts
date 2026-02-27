@@ -8,25 +8,20 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/sosiristseng/template-quartz",
     },
   }),
 }
 
-// components for pages that display a single page (e.g. a single note)
-export const defaultContentPageLayout: PageLayout = {
+// components for the homepage (blog style)
+export const defaultHomePageLayout: PageLayout = {
   beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    Component.Profile(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -38,10 +33,42 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
+    Component.DesktopOnly(Component.Spacer()),
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    Component.RecentNotes({ title: "最近笔记", limit: 5, showTags: false }),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
+  ],
+}
+
+// components for pages that display a single page (e.g. a single note)
+export const defaultContentPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
+  ],
+  left: [
+    Component.Profile(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
+      ],
+    }),
+    Component.DesktopOnly(Component.Spacer()),
+    Component.Explorer(),
+  ],
+  right: [
+    Component.RecentNotes({ title: "最近笔记", limit: 5, showTags: false }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -51,7 +78,7 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
+    Component.Profile(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -62,6 +89,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
+    Component.DesktopOnly(Component.Spacer()),
     Component.Explorer(),
   ],
   right: [],
