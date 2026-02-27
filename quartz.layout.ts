@@ -67,6 +67,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
+    Component.DesktopOnly(Component.RecentNotes({ title: "最近笔记", limit: 5, showTags: false })),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
 }
