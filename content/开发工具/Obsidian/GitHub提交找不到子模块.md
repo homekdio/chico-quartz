@@ -7,9 +7,6 @@ tags:
   - Quartz
   - 故障排除
 ---
-
-# GitHub Actions 子模块 "not our ref" 报错解决方案
-
 ## 1. 现象描述
 
 在使用 GitHub Actions 自动化部署（例如 Quartz 博客）时，由 `actions/checkout` 触发的子模块同步步骤失败，报错信息如下：
