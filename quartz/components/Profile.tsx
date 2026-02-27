@@ -35,13 +35,11 @@ export default ((userOpts?: Partial<ProfileOptions>) => {
         <div class="profile-avatar-container">
           <img src={avatarPath} alt="Avatar" class="profile-avatar" />
         </div>
-        <div class="profile-text">
-          <h2 class="profile-name">{opts.name}</h2>
-          <p class="profile-title">{opts.title}</p>
-        </div>
-        <p class="profile-description desktop-only">{opts.description}</p>
+        <h2 class="profile-name">{opts.name}</h2>
+        <p class="profile-title">{opts.title}</p>
+        <p class="profile-description">{opts.description}</p>
 
-        <div class="profile-social desktop-only">
+        <div class="profile-social">
           {opts.github && (
             <a href={opts.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-tooltip="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -196,45 +194,6 @@ export default ((userOpts?: Partial<ProfileOptions>) => {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-2px);
-  }
-
-  @media all and (max-width: 800px) {
-    .profile-card {
-      flex-direction: row;
-      align-items: center;
-      padding: 0;
-      margin-bottom: 0;
-      border: none;
-      box-shadow: none;
-      background-color: transparent;
-      gap: 0.8rem;
-    }
-
-    .profile-avatar-container {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 0;
-      border-width: 2px;
-    }
-
-    .profile-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    
-    .profile-card h2.profile-name {
-      font-size: 1.1rem;
-      margin: 0;
-      line-height: 1.2;
-    }
-    
-    .profile-title {
-      font-size: 0.8rem;
-      margin: 0;
-      line-height: 1.2;
-    }
   }
   `
 
