@@ -15,7 +15,7 @@ tags:
 
 Quartz 的日期获取插件 `CreatedModifiedDate` 默认采用 `["frontmatter", "filesystem"]` 优先级。该配置在云端构建环境下存在以下缺陷：
 
-1. **文件系统日期重置**：GitHub Actions <aside>这里指的是 GitHub 的自动化机器人，它会在云端帮你构建网站。</aside>在执行构建时会重新 Checkout 仓库代码，导致所有文件的系统修改时间被更新为流水线运行的当前时间。
+1. **文件系统日期重置**：GitHub Actions 在执行构建时会重新 Checkout 仓库代码，导致所有文件的系统修改时间被更新为流水线运行的当前时间。
 2. **逻辑回溯失效**：若笔记未在 Frontmatter 中手动指定 `date` 字段，Quartz 会回退至文件系统日期。由于所有文件在云端的系统时间一致，导致基于时间的排序逻辑失效或产生偏差。
 
 ## 3. 技术解决方案
