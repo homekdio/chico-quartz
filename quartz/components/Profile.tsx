@@ -39,9 +39,9 @@ export default ((userOpts?: Partial<ProfileOptions>) => {
           <h2 class="profile-name">{opts.name}</h2>
           <p class="profile-title">{opts.title}</p>
         </div>
-        <p class={classNames("profile-description", "desktop-only")}>{opts.description}</p>
+        <p class="profile-description desktop-only">{opts.description}</p>
 
-        <div class={classNames("profile-social", "desktop-only")}>
+        <div class="profile-social desktop-only">
           {opts.github && (
             <a href={opts.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-tooltip="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
