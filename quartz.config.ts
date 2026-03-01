@@ -57,7 +57,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["git", "frontmatter", "filesystem"],
+        priority: ["frontmatter", "git", "filesystem"],
       }),//最近笔记排序的判断条件
       Plugin.SyntaxHighlighting({
         theme: {
