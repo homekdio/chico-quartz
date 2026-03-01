@@ -91,5 +91,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Spacer()),
     Component.Explorer({ title: "资源管理器" }),
   ],
-  right: [],
+  right: [
+    Component.DesktopOnly(Component.RecentNotes({ title: "📝最近笔记", limit: 5, showTags: false })),
+  ],
 }
