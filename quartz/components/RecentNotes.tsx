@@ -13,6 +13,7 @@ interface Options {
   limit: number
   linkToMore: SimpleSlug | false
   showTags: boolean
+  showOnlyOnIndex?: boolean
   filter: (f: QuartzPluginData) => boolean
   sort: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
@@ -33,6 +34,12 @@ export default ((userOpts?: Partial<Options>) => {
     cfg,
   }: QuartzComponentProps) => {
     const opts = { ...defaultOptions(cfg), ...userOpts }
+
+    const isHomePage = fileData.slug === "index" || fileData.slug === "" || fileData.slug === "/" || fileData.slug === "index/"
+    if (opts.showOnlyOnIndex && !isHomePage) {
+      return null
+    }
+
     const pages = allFiles.filter(opts.filter).sort(opts.sort)
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
