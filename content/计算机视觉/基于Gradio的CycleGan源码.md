@@ -1,9 +1,11 @@
 ---
-title: CycleGAN 代码逐行超详解 (面向零基础)
+title: 基于Gradio的CycleGan源码
 tags:
   - CV
   - CycleGAN
   - Gradio
+  - 
+date: 2025-03-02 15:32
 ---
 
 这份文档将 `gradioui.ipynb` 里的代码拆解开来，用通俗易懂的语言解释每一行代码在做什么。
